@@ -13,7 +13,7 @@ function App() {
     e.preventDefault();
     const id = e.target.value;
     if(id===""){getAllUsers()}else{
-      const url = "http://localhost:8080/users";
+      const url = "https://users-api-2-entreg-dev-smhk.3.us-1.fl0.io/users";
     axios
       .get(url + `/${id}`)
       .then(({ data }) => {
@@ -34,14 +34,14 @@ function App() {
     setIsShowModal(!isShowModal);
   };
   const getAllUsers = () => {
-    const url = "http://localhost:8080/users";
+    const url = "https://users-api-2-entreg-dev-smhk.3.us-1.fl0.io/users";
     axios
       .get(url)
       .then(({ data }) => setUsers(data))
       .catch((err) => console.log(err));
   };
   const CreateUser = (newUser, reset) => {
-    const url = "http://localhost:8080/users";
+    const url = "https://users-api-2-entreg-dev-smhk.3.us-1.fl0.io/users";
     axios
       .post(url, newUser)
       .then(({}) => {
@@ -59,14 +59,14 @@ function App() {
   };
 
   const deleteUser = (id) => {
-    const url = "http://localhost:8080/users";
+    const url = "https://users-api-2-entreg-dev-smhk.3.us-1.fl0.io/users";
     axios
       .delete(url + `/${id}`)
       .then(({ data }) => getAllUsers())
       .catch((err) => console.log(err));
   };
   const updateUser = (updateUser, reset) => {
-    const url = "http://localhost:8080/users";
+    const url = "https://users-api-2-entreg-dev-smhk.3.us-1.fl0.io/users";
     axios
       .put(url + `/${isUserToUpdate.id}`, updateUser)
       .then(({}) => {
