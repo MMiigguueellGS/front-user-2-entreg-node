@@ -32,7 +32,13 @@ const ModalCreateUpdate = ({
   }
   const handleClickCloseModal = () => {
     setIsShowModal(false);
-    // reset(EMPTY_FORM_VALUES)
+    reset({
+      firstName: "",
+      lastName:"",
+      email:"",
+      password:"",
+      birthday:""
+    })
     setIsUserToUpdate(null);
   };
 
